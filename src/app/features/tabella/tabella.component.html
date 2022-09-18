@@ -1,0 +1,32 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nome</th>
+    <th scope="col">Cognome</th>
+    <th scope="col">Sesso</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of listaPersone">
+    <th scope="row">{{p.id}}</th>
+    <td>{{p.nome}}</td>
+    <td>{{p.cognome}}</td>
+    <td>{{p.sesso}}</td>
+    <td>
+     <app-bottoni (click)="elimina(p.id)"></app-bottoni>
+      <app-bottoni (click)="modifica(p.id)"></app-bottoni>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+<p>Aggiungi</p>
+<form>
+  <input [(ngModel)] = "persona.nome" name="nome" placeholder="nome">
+  <input [(ngModel)] = "persona.cognome" name="cognome" placeholder="cognome">
+  <input [(ngModel)] = "persona.sesso"name="sesso" placeholder="sesso">
+<app-bottoni (click)="aggiungi()"></app-bottoni>
+
+
+</form>
